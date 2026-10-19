@@ -94,6 +94,22 @@ registered size and SHA256 check. GitHub's server-side asset SHA256 digests also
 matched the local export manifest. The private research checkout and original
 checkpoint paths are not required to download these assets.
 
+## Platform CI
+
+The corrected implementation at commit `2981c250f374763a4609edb1b2e45b8df4f234a0`
+passed all three jobs in [GitHub Actions run 39204924548](https://github.com/IreneX86/organoid_light/actions/runs/39204924548):
+
+| Platform | Python | Synthetic tests |
+| --- | --- | --- |
+| Linux (`ubuntu-latest`) | 3.11 | PASS |
+| Windows (`windows-latest`) | 3.11 | PASS |
+| macOS (`macos-latest`) | 3.11 | PASS |
+
+These jobs install the lightweight test dependencies and use synthetic images.
+They do not load TensorFlow, use a GPU, download checkpoints, or upload biological
+data. Actual frozen-checkpoint inference parity remains the macOS CPU test scope
+described above. The subsequent documentation update does not change inference.
+
 ## Reproducing the private reference comparison
 
 The repository includes `tools/validate_reference.py`. It accepts a private
