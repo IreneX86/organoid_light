@@ -1,0 +1,193 @@
+{
+  "actual_platform": "macOS arm64",
+  "cases": [
+    {
+      "case_id": "mito_reference_001",
+      "cli": {
+        "elapsed_seconds": 29.476,
+        "exit_code": 0,
+        "quality_report_present": true,
+        "resume_exit_code": 0,
+        "resume_preserved_mask_hashes_and_mtimes": true,
+        "resume_reinitialized_model": false,
+        "single_mask_mismatched_pixels": 0,
+        "stack_is_two_repeated_real_planes": true,
+        "stack_planes_mismatched_pixels": [
+          0,
+          0
+        ],
+        "stack_shape": [
+          2,
+          1200,
+          1200
+        ],
+        "uint8_0_255_minisblack_verified": true
+      },
+      "elapsed_seconds": 57.745,
+      "foreground_pixels": 72823,
+      "historical_difference_policy": "reported separately; not silently accepted as exact historical reproduction",
+      "historical_mask_sha256": "59f66ea9612e63f74ffea702e8299735b6f1fe801cf9ed0ffb8020ffab947f8e",
+      "historical_vs_same_runtime_reference_mismatched_pixels": 0,
+      "input_dtype": "uint16",
+      "input_sha256": "72a42731c38a13b5797490baf34ad1ffcdbdf7bfdce9002eabaa30811538c99d",
+      "model_probability_checks": [
+        {
+          "exported_sha256": "5633ddde99766582681dd3e5e9fd28c50f6475f44cc6411a5746b22ef1dd43c3",
+          "id": "mito",
+          "max_absolute_error": 0.0,
+          "probability_exact_equal": true,
+          "source_sha256": "66db8edc3006a9b70fdd75901f6f5e4a40359699f7a372d28f054d8dec58ecd3"
+        }
+      ],
+      "normalization_exact_equal": true,
+      "organelle": "mito",
+      "package_vs_same_runtime_reference_mismatched_pixels": 0,
+      "shape": [
+        1200,
+        1200
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "ld_reference_001",
+      "cli": {
+        "elapsed_seconds": 132.592,
+        "exit_code": 0,
+        "quality_report_present": true,
+        "resume_exit_code": 0,
+        "resume_preserved_mask_hashes_and_mtimes": true,
+        "resume_reinitialized_model": false,
+        "single_mask_mismatched_pixels": 0,
+        "stack_is_two_repeated_real_planes": true,
+        "stack_planes_mismatched_pixels": [
+          0,
+          0
+        ],
+        "stack_shape": [
+          2,
+          1200,
+          1200
+        ],
+        "uint8_0_255_minisblack_verified": true
+      },
+      "elapsed_seconds": 265.786,
+      "foreground_pixels": 3011,
+      "historical_difference_policy": "reported separately; not silently accepted as exact historical reproduction",
+      "historical_mask_sha256": "15480626e499a3c868a870b778d1b9f3c67213c7ec4bc1f0bf949472a69aed12",
+      "historical_vs_same_runtime_reference_mismatched_pixels": 0,
+      "input_dtype": "uint16",
+      "input_sha256": "3471aae1d988d0e0fa3490060b1b6c60fd0844e1d1d0286a186ab49f8885a6cd",
+      "model_probability_checks": [
+        {
+          "exported_sha256": "4ebe62c16e0aa554784c4f1e2deefd1299e242c47f4647860ec1b461794a7396",
+          "id": "ld-fold0",
+          "max_absolute_error": 0.0,
+          "probability_exact_equal": true,
+          "source_sha256": "7c73c1e9ae890e07d6a4af41a299611066b573a69e5ad7813ee7d63633a2fc1e"
+        },
+        {
+          "exported_sha256": "6431871f51ca5359a9e82634c1135108bc1d69a34def1d079c86d3cc339d5574",
+          "id": "ld-fold1",
+          "max_absolute_error": 0.0,
+          "probability_exact_equal": true,
+          "source_sha256": "1c6ea7ece88ab2ab807d3171e67e025a9a6a94c2976e20961333d8775d44d614"
+        },
+        {
+          "exported_sha256": "49b3f6610f87f2791ba650dd6b3e6504879ce446fd784925f08a3bb9af683db5",
+          "id": "ld-fold2",
+          "max_absolute_error": 0.0,
+          "probability_exact_equal": true,
+          "source_sha256": "c4c7dbde1bb37647e546ee8690aa5f7f8b0695a3d285fb4bf91270f30140f2df"
+        },
+        {
+          "exported_sha256": "13b70e1e8594340a6e580a893e8a8732a78cadb76f02b3ed57a88b4bd4913d5e",
+          "id": "ld-fold3",
+          "max_absolute_error": 0.0,
+          "probability_exact_equal": true,
+          "source_sha256": "8b3674bf4d670ed4e32c8e907180b7201c16879bc6035093c02f22a4f09fa55e"
+        },
+        {
+          "exported_sha256": "a292031589eeefbe6650d52cbcf7b4263bba557aed186026280990a2b236ea3f",
+          "id": "ld-fold4",
+          "max_absolute_error": 0.0,
+          "probability_exact_equal": true,
+          "source_sha256": "a31d517c83ba710cc67c256455dcde09dfc46ae3cccfc474f663b191e56d413f"
+        }
+      ],
+      "normalization_exact_equal": true,
+      "organelle": "ld",
+      "package_vs_same_runtime_reference_mismatched_pixels": 0,
+      "shape": [
+        1200,
+        1200
+      ],
+      "status": "PASS"
+    },
+    {
+      "case_id": "nuc_reference_001",
+      "cli": {
+        "elapsed_seconds": 31.464,
+        "exit_code": 0,
+        "quality_report_present": true,
+        "resume_exit_code": 0,
+        "resume_preserved_mask_hashes_and_mtimes": true,
+        "resume_reinitialized_model": false,
+        "single_mask_mismatched_pixels": 0,
+        "stack_is_two_repeated_real_planes": true,
+        "stack_planes_mismatched_pixels": [
+          0,
+          0
+        ],
+        "stack_shape": [
+          2,
+          1200,
+          1200
+        ],
+        "uint8_0_255_minisblack_verified": true
+      },
+      "elapsed_seconds": 60.428,
+      "foreground_pixels": 67778,
+      "historical_difference_policy": "reported separately; not silently accepted as exact historical reproduction",
+      "historical_mask_sha256": "0e6b54200faf02bff98e442479e876fa506faa4ff802299a1d8f776259b4aac6",
+      "historical_vs_same_runtime_reference_mismatched_pixels": 0,
+      "input_dtype": "uint16",
+      "input_sha256": "3471aae1d988d0e0fa3490060b1b6c60fd0844e1d1d0286a186ab49f8885a6cd",
+      "model_probability_checks": [
+        {
+          "exported_sha256": "41f27b69d6448feee597c4b08610b002e26d8199f01fbe1da087addcd62f7ce5",
+          "id": "nuc",
+          "max_absolute_error": 0.0,
+          "probability_exact_equal": true,
+          "source_sha256": "c1191f00e327d6f73acc73f202a3a8e44895cb669bbfa2c6a1f3f664cc986b9e"
+        }
+      ],
+      "normalization_exact_equal": true,
+      "organelle": "nuc",
+      "package_vs_same_runtime_reference_mismatched_pixels": 0,
+      "shape": [
+        1200,
+        1200
+      ],
+      "status": "PASS"
+    }
+  ],
+  "device": "CPU",
+  "python": "3.11.16",
+  "reference_code_sha256": {
+    "nuc_postprocess": "28be8a89d148790aed25a9272e5f550361831f0da0b3d0cc051e9f3f2d2384ea",
+    "sliding_window": "822cf759d93d8e4890f9c8169e626a3a67b2350d545c2d6b1f5d0f7dd6e9e087",
+    "tiff_io": "9c1ba413ba43a1497a606f9b355cf2cad4b260a98597beb1d394ae3ed106aad0"
+  },
+  "scope": "implementation-equivalence, not accuracy validation",
+  "scope_note": "Three organelle cases, two unique 1200x1200 real input TIFFs; each CLI run includes a single plane and a two-plane stack repeating that same image. This tests software equivalence, not segmentation accuracy or independent generalization.",
+  "status": "PASS",
+  "unique_real_input_tiffs": 2,
+  "validation_date": "2026-10-19",
+  "versions": {
+    "keras": "3.15.1",
+    "numpy": "2.4.6",
+    "scipy": "1.16.2",
+    "tensorflow": "2.21.0",
+    "tifffile": "2026.3.3"
+  }
+}

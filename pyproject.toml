@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organoid-light"
+version = "1.0.0"
+description = "Reproducible 2D microscopy segmentation for mitochondria, lipid droplets, and nuclei"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+authors = [{name = "Organoid research project"}]
+license = "MIT"
+dependencies = [
+  "numpy==2.4.6",
+  "tifffile==2026.3.3",
+  "scipy==1.16.2",
+  "platformdirs>=4.3,<5",
+  "filelock>=3.16,<4",
+]
+
+[project.optional-dependencies]
+cpu = ["tensorflow==2.21.0", "keras==3.15.1"]
+gpu = ["tensorflow[and-cuda]==2.21.0; sys_platform == 'linux' and platform_machine == 'x86_64'", "keras==3.15.1"]
+test = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[project.scripts]
+organoid-light = "organoid_light.cli:main"
+
+[project.urls]
+Repository = "https://github.com/IreneX86/organoid_light"
+Issues = "https://github.com/IreneX86/organoid_light/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+organoid_light = ["model_manifest.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

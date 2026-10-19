@@ -1,0 +1,128 @@
+{
+  "models": {
+    "ld": {
+      "architecture": "2D U-Net, 4 pools, base filters 32, one grayscale channel",
+      "assets": [
+        {
+          "bytes": 31571794,
+          "filename": "ld-focal-vote1-v1-fold0.keras",
+          "fold": 0,
+          "sha256": "4ebe62c16e0aa554784c4f1e2deefd1299e242c47f4647860ec1b461794a7396",
+          "source_sha256": "7c73c1e9ae890e07d6a4af41a299611066b573a69e5ad7813ee7d63633a2fc1e",
+          "threshold": 0.6500000000000001,
+          "url": "https://github.com/IreneX86/organoid_light/releases/download/models-v1/ld-focal-vote1-v1-fold0.keras"
+        },
+        {
+          "bytes": 31571794,
+          "filename": "ld-focal-vote1-v1-fold1.keras",
+          "fold": 1,
+          "sha256": "6431871f51ca5359a9e82634c1135108bc1d69a34def1d079c86d3cc339d5574",
+          "source_sha256": "1c6ea7ece88ab2ab807d3171e67e025a9a6a94c2976e20961333d8775d44d614",
+          "threshold": 0.8000000000000002,
+          "url": "https://github.com/IreneX86/organoid_light/releases/download/models-v1/ld-focal-vote1-v1-fold1.keras"
+        },
+        {
+          "bytes": 31571794,
+          "filename": "ld-focal-vote1-v1-fold2.keras",
+          "fold": 2,
+          "sha256": "49b3f6610f87f2791ba650dd6b3e6504879ce446fd784925f08a3bb9af683db5",
+          "source_sha256": "c4c7dbde1bb37647e546ee8690aa5f7f8b0695a3d285fb4bf91270f30140f2df",
+          "threshold": 0.6000000000000002,
+          "url": "https://github.com/IreneX86/organoid_light/releases/download/models-v1/ld-focal-vote1-v1-fold2.keras"
+        },
+        {
+          "bytes": 31571794,
+          "filename": "ld-focal-vote1-v1-fold3.keras",
+          "fold": 3,
+          "sha256": "13b70e1e8594340a6e580a893e8a8732a78cadb76f02b3ed57a88b4bd4913d5e",
+          "source_sha256": "8b3674bf4d670ed4e32c8e907180b7201c16879bc6035093c02f22a4f09fa55e",
+          "threshold": 0.3500000000000001,
+          "url": "https://github.com/IreneX86/organoid_light/releases/download/models-v1/ld-focal-vote1-v1-fold3.keras"
+        },
+        {
+          "bytes": 31571794,
+          "filename": "ld-focal-vote1-v1-fold4.keras",
+          "fold": 4,
+          "sha256": "a292031589eeefbe6650d52cbcf7b4263bba557aed186026280990a2b236ea3f",
+          "source_sha256": "a31d517c83ba710cc67c256455dcde09dfc46ae3cccfc474f663b191e56d413f",
+          "threshold": 0.5000000000000001,
+          "url": "https://github.com/IreneX86/organoid_light/releases/download/models-v1/ld-focal-vote1-v1-fold4.keras"
+        }
+      ],
+      "organelle": "ld",
+      "scientific_status": "human_preferred_review_ensemble_not_independently_validated",
+      "settings": {
+        "default_batch_size": 4,
+        "foreground_value": 255,
+        "minimum_votes": 1,
+        "overlap": 128,
+        "percentiles": [
+          1.0,
+          99.8
+        ],
+        "tile_size": 512
+      },
+      "version": "ld-focal-vote1-v1"
+    },
+    "mito": {
+      "architecture": "2D U-Net, 4 pools, base filters 32, one grayscale channel",
+      "assets": [
+        {
+          "bytes": 31571794,
+          "filename": "mito-fold0-baseline-v1.keras",
+          "sha256": "5633ddde99766582681dd3e5e9fd28c50f6475f44cc6411a5746b22ef1dd43c3",
+          "source_sha256": "66db8edc3006a9b70fdd75901f6f5e4a40359699f7a372d28f054d8dec58ecd3",
+          "threshold": 0.45000000000000007,
+          "url": "https://github.com/IreneX86/organoid_light/releases/download/models-v1/mito-fold0-baseline-v1.keras"
+        }
+      ],
+      "organelle": "mito",
+      "scientific_status": "frozen_internal_fold0_baseline",
+      "settings": {
+        "default_batch_size": 4,
+        "foreground_value": 255,
+        "overlap": 128,
+        "percentiles": [
+          1.0,
+          99.8
+        ],
+        "tile_size": 512
+      },
+      "version": "mito-fold0-baseline-v1"
+    },
+    "nuc": {
+      "architecture": "2D U-Net, 4 pools, base filters 32, one grayscale channel",
+      "assets": [
+        {
+          "bytes": 31571794,
+          "filename": "nuc-review-v1.keras",
+          "sha256": "41f27b69d6448feee597c4b08610b002e26d8199f01fbe1da087addcd62f7ce5",
+          "source_sha256": "c1191f00e327d6f73acc73f202a3a8e44895cb669bbfa2c6a1f3f664cc986b9e",
+          "url": "https://github.com/IreneX86/organoid_light/releases/download/models-v1/nuc-review-v1.keras"
+        }
+      ],
+      "organelle": "nuc",
+      "scientific_status": "same_batch_internal_prototype_no_reliable_cross_organoid_validation",
+      "settings": {
+        "closing_radius": 4,
+        "core_threshold": 0.45,
+        "default_batch_size": 4,
+        "foreground_value": 255,
+        "low_threshold": 0.03,
+        "median_size": 5,
+        "minimum_raw_area": 500,
+        "overlap": 128,
+        "percentiles": [
+          1.0,
+          99.8
+        ],
+        "postprocessing": "nuc_review_2d_low003_core045_min500_close4_curved_split_v1",
+        "tile_size": 512
+      },
+      "version": "nuc-review-v1"
+    }
+  },
+  "release_tag": "models-v1",
+  "schema_version": 1,
+  "source_revision": "57743ee0cc36f48e34f269bb9124ae0a4b92756d"
+}
