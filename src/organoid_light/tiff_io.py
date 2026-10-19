@@ -172,7 +172,8 @@ def write_mask_tiff(
         else:
             raise ValueError("Too many mask planes for the input TIFF")
         quality = validate_mask_tiff(temporary_path, info)
-        with temporary_path.open("rb") as stream:
+        # Windows FlushFileBuffers requires a write-capable file handle.
+        with temporary_path.open("r+b") as stream:
             os.fsync(stream.fileno())
         os.link(temporary_path, output_path)
         return quality

@@ -74,14 +74,25 @@ from the models' scientific limitations in [model-cards.md](model-cards.md).
 In particular, Nuc has no reliable cross-organoid external validation, and the
 LD 1/5 rule was chosen by visual review rather than independent ensemble testing.
 
-The local lightweight suite passed **55 tests, with one case-sensitive filename
+The local lightweight suite passed **56 tests, with one case-sensitive filename
 fixture skipped on the case-insensitive host filesystem, and 50 parameterized
 subtests**. The explicit real-model checks described
 above were run separately and passed. Ruff passed. Wheel/sdist builds and a
 separate, non-editable wheel installation's model catalog, CPU doctor and a
 63×71 synthetic TIFF prediction passed outside the source repository.
-Platform CI and release-download verification are reported separately when run;
-the macOS checks alone do not demonstrate every operating system/backend.
+The first Windows CI run identified that syncing a read-only file descriptor is
+unsupported on Windows. The TIFF temporary file now uses a write-capable handle
+for the durability sync, with a regression test; mask calculations are unchanged.
+Platform CI results are recorded separately below; the macOS checks alone do not
+demonstrate every operating system/backend.
+
+## Public model distribution
+
+All seven assets were downloaded without GitHub authentication through the
+installed CLI from the published `models-v1` Release. Every file passed its
+registered size and SHA256 check. GitHub's server-side asset SHA256 digests also
+matched the local export manifest. The private research checkout and original
+checkpoint paths are not required to download these assets.
 
 ## Reproducing the private reference comparison
 

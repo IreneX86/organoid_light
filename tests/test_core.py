@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
 import tifffile
@@ -120,6 +122,23 @@ class TiffContractTests(unittest.TestCase):
         self.assertEqual(actual.shape, data.shape)
         for plane in actual[1:]:
             np.testing.assert_array_equal(plane, actual[0])
+
+    def test_mask_sync_uses_a_write_capable_descriptor_for_windows(self) -> None:
+        info = inspect_tiff(self.source(np.zeros((7, 9), np.uint16)))
+        output = self.root / "mask.tif"
+        real_fsync = os.fsync
+
+        def require_writable_descriptor(descriptor: int) -> None:
+            # A zero-byte write checks access without changing TIFF contents.
+            # Read-only descriptors fail here even on hosts where fsync accepts
+            # them, covering Windows' stricter FlushFileBuffers requirement.
+            self.assertEqual(os.write(descriptor, b""), 0)
+            real_fsync(descriptor)
+
+        with patch("organoid_light.tiff_io.os.fsync", side_effect=require_writable_descriptor) as sync:
+            write_mask_tiff(output, [np.zeros((7, 9), bool)], info)
+            sync.assert_called_once()
+        self.assertEqual(validate_mask_tiff(output, info)["foreground_pixels"], [0])
 
     def test_singleton_spatial_and_z_axes_are_preserved(self) -> None:
         for index, (shape, axes) in enumerate((((1, 8), "YX"), ((8, 1), "YX"), ((1, 7, 9), "ZYX"))):
